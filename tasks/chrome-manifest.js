@@ -64,7 +64,10 @@ module.exports = function (grunt) {
           background.scripts = [options.background.target];
         } else {
           // remove background.scripts if target is not given
-          delete background.scripts;
+          // unless keep is set
+          if (!options.background.keep) {
+            delete background.scripts;
+          }
         }
       }
 
